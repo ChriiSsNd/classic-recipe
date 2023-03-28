@@ -1,0 +1,233 @@
+@use 'base/' as *;
+@use 'components/' as *;
+@use 'layout/' as *;
+@use 'utilities/' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: calc(100vw - (234px * 2));
+    margin: auto;
+    padding-top: 10px;
+}
+
+
+h1,
+h2 {
+    font-family: $Playfair;
+    
+}
+
+.resume {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    
+    img {
+        margin-top: 4.5px;
+    }
+    
+    p {
+        font-size: $size-14;
+        font-weight: 500;
+        font-style: italic;
+        max-width: 462px;
+        margin-top: 0;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.photo {
+    margin-top: 37px;
+    margin-bottom: 28.05px;
+}
+
+.recipe__ingredients {
+
+    h3 {
+        font-family: $Playfair;
+        font-size: $size-18;
+        font-style: italic;
+        font-weight: 400;
+    }
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    div {
+        display: grid;
+        grid-template: auto / 21px 1fr;
+        gap: 17px;
+
+        label {
+            font-family: $Montserrat;
+            font-size: $size-16;
+            font-weight: 400;
+        }
+
+        input {
+            width: 21px;
+            height: 21px;
+            border-color: $gray2-color;
+            margin-top: 0;
+        }
+    }
+
+}
+
+.step {
+    display: grid;
+    grid-template: auto /36px 1fr;
+    gap: 12px;
+    margin-bottom: 31px;
+
+    p {
+        margin: 0;
+        font-family: $Montserrat;
+        font-size: $size-16;
+        font-weight: 400;
+    }
+}
+
+.step__num {
+    @include step__num($radius,
+        $white-color,
+        $orange-color,
+        $Playfair,
+        $size-24,
+        700);
+}
+
+.recipe__serving {
+    margin-top: 19.95px;
+}
+
+.serving__box {
+    display: flex;
+    align-items: center;
+    gap: 18.83px;
+
+    .icon--color {
+        color: $orange-color;
+    }
+
+    i {
+        color: $gray3-color;
+    }
+
+    p {
+        color: $gray1-color;
+        font-size: $size-10;
+        font-weight: 700;
+        font-family: $Montserrat;
+        text-transform: uppercase;
+    }
+}
+
+.serving--text,
+.timing--text {
+    font-weight: 500;
+    text-transform: none;
+    font-size: $size-14;
+}
+
+.serving--text {
+    color: $orange-color;
+}
+
+.timing--text {
+    color: $black-color;
+}
+
+.source {
+    margin-top: 57px;
+    color: $gray1-color;
+    font-family: $Montserrat;
+    font-size: $size-16;
+    font-style: italic;
+    font-weight: 400;
+
+    a {
+        color: $gray1-color;
+        text-decoration: none;
+    }
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 93px;
+    font-family: $Montserrat;
+    font-size: $size-14;
+    font-weight: 500;
+    color: $gray1-color;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 1024px) {
+
+    .wrapper {
+        max-width: calc(100vw - (11px * 2));
+        padding-top: 12px;
+    }
+
+    .resume {
+
+        p {
+            max-width: 290px;
+        }
+    }
+
+    .photo {
+        margin-top: 5px;
+        margin-bottom: 24.05px;
+    }
+
+    .recipe__serving {
+        margin-top: 0;
+
+        &>div {
+            display: grid;
+            grid-template: repeat(2, auto) / repeat(3, 1fr);
+            column-gap: 25px;
+            row-gap: 20px;
+
+
+            div:nth-child(1) {
+                grid-column: 1 / span 4;
+            }
+        }
+    }
+
+    .serving__box {
+        gap: 5.42px;
+
+        p {
+            font-size: $size-8;
+        }
+    }
+
+    .serving--text,
+    .timing--text {
+        font-size: $size-10;
+    }
+
+    .source {
+        margin-top: 26px;
+        font-size: $size-12;
+        text-align: center;
+    }
+
+    .copyright {
+        margin-top: 129px;
+    }
+}

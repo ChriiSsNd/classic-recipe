@@ -1,0 +1,21 @@
+@use '../utilities/variables' as var;
+
+.recipe__serving {
+    width: 216px;
+    height: 367px;
+    background-color: var.$white-color;
+    border-radius: var.$radius;
+    box-shadow: 0px 0px 20px rgba(var.$gray1-color, 0.1), 0px 0px 20px rgba(var.$gray1-color, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (min-width: 375px) and (max-width: 1024px) {
+        width: 100%;
+        height: auto;
+        background-color: inherit;
+        border-radius: 0;
+        box-shadow: none;
+        display: block;
+    }
+}

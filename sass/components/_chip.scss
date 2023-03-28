@@ -1,0 +1,11 @@
+@mixin step__num($radius, $color, $bg, $font, $size, $weight) {
+    width: 36px;
+    height: 36px;
+    border-radius: $radius;
+    background-color: $bg;
+    color: $color;
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+    text-align: center;
+}
